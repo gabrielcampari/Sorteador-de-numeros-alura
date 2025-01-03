@@ -8,14 +8,15 @@ function raffle() {
   let randomNumbers = [];
   let number;
 
-  for (let i = 0; i <= quantidade; i++) {
+  for (let i = 0; i < quantidade; i++) {
     number = takeRandomNumber(de, ate);
     randomNumbers.push(number);
   }
 
-  alert(`O numero sorteado foi: ${randomNumbers}`);
+  let result = document.getElementById("result");
+  result.innerText = `Números sorteados: ${randomNumbers.join(", ")}`;
 }
 
 function takeRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min - 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
