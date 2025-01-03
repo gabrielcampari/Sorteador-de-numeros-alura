@@ -5,8 +5,15 @@ function raffle() {
   let de = parseInt(document.getElementById("de").value);
   let ate = parseInt(document.getElementById("ate").value);
 
-  let number = takeRandomNumber(de, ate);
-  alert(`O numero sorteado foi: ${number}`);
+  let randomNumbers = [];
+  let number;
+
+  for (let i = 0; i <= quantidade; i++) {
+    number = takeRandomNumber(de, ate);
+    randomNumbers.push(number);
+  }
+
+  alert(`O numero sorteado foi: ${randomNumbers}`);
 }
 
 function takeRandomNumber(min, max) {
