@@ -10,6 +10,12 @@ function raffle() {
 
   for (let i = 0; i < quantidade; i++) {
     number = takeRandomNumber(de, ate);
+
+    while (randomNumbers.includes(number)) {
+      //function includes no array, verifica se o numero já existe no array
+      number = takeRandomNumber(de, ate);
+    }
+
     randomNumbers.push(number);
   }
 
