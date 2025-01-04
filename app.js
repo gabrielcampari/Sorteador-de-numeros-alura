@@ -14,7 +14,9 @@ function raffle() {
   }
 
   let result = document.getElementById("result");
-  result.innerText = `Números sorteados: ${randomNumbers.join(", ")}`;
+  result.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${randomNumbers.join(
+    ", "
+  )}</label>`;
 }
 
 function takeRandomNumber(min, max) {
