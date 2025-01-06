@@ -23,6 +23,7 @@ function raffle() {
   result.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${randomNumbers.join(
     ", "
   )}</label>`;
+  changeButtonStatus();
 }
 
 function takeRandomNumber(min, max) {
@@ -45,6 +46,7 @@ function reset() {
   document.getElementById("quantity").value = "";
   document.getElementById("from").value = "";
   document.getElementById("until").value = "";
+
   document.getElementById(
     "result"
   ).innerHTML = `<label class="texto__paragrafo">Números sorteados: Nenhum número sorteado.</label>`; //Aqui inserimos o resultado como um label padrão para resetá lo
