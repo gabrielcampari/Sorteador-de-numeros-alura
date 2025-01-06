@@ -1,19 +1,19 @@
 function raffle() {
   //Objetivo de receber os valores: "Quantidade de números, do número e Até o número", use os id para receber esses valores
 
-  let quantidade = parseInt(document.getElementById("quantidade").value);
-  let de = parseInt(document.getElementById("de").value);
-  let ate = parseInt(document.getElementById("ate").value);
+  let quantity = parseInt(document.getElementById("quantity").value);
+  let from = parseInt(document.getElementById("from").value);
+  let until = parseInt(document.getElementById("until").value);
 
   let randomNumbers = [];
   let number;
 
-  for (let i = 0; i < quantidade; i++) {
-    number = takeRandomNumber(de, ate);
+  for (let i = 0; i < quantity; i++) {
+    number = takeRandomNumber(from, until);
 
     while (randomNumbers.includes(number)) {
       //function includes no array, verifica se o numero já existe no array
-      number = takeRandomNumber(de, ate);
+      number = takeRandomNumber(from, until);
     }
 
     randomNumbers.push(number);
@@ -27,4 +27,26 @@ function raffle() {
 
 function takeRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function changeButtonStatus() {
+  let button = document.getElementById("btn-reiniciar");
+
+  if (button.classList.contains("container__botao-desabilitado")) {
+    button.classList.remove("container__botao-desabilitado");
+    button.classList.add("container__botao");
+  } else {
+    button.classList.remove("container__botao");
+    button.classList.add("container__botao-desabilitado");
+  }
+}
+
+function reset() {
+  document.getElementById("quantity").value = "";
+  document.getElementById("from").value = "";
+  document.getElementById("until").value = "";
+  document.getElementById(
+    "result"
+  ).innerHTML = `<label class="texto__paragrafo">Números sorteados: Nenhum número sorteado.</label>`; //Aqui inserimos o resultado como um label padrão para resetá lo
+  changeButtonStatus();
 }
