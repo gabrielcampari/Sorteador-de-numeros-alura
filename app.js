@@ -41,3 +41,13 @@ function changeButtonStatus() {
     button.classList.add("container__botao-desabilitado");
   }
 }
+
+function reset() {
+  document.getElementById("quantidade").value = "";
+  document.getElementById("de").value = "";
+  document.getElementById("ate").value = "";
+  document.getElementById(
+    "result"
+  ).innerHTML = `<label class="texto__paragrafo">Números sorteados: Nenhum número sorteado.</label>`; //Aqui inserimos o resultado como um label padrão para resetá lo
+  changeButtonStatus();
+}
