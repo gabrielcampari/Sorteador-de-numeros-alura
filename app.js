@@ -23,8 +23,31 @@ function raffle() {
   result.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${randomNumbers.join(
     ", "
   )}</label>`;
+  changeButtonStatus();
 }
 
 function takeRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function changeButtonStatus() {
+  let button = document.getElementById("btn-reiniciar");
+
+  if (button.classList.contains("container__botao-desabilitado")) {
+    button.classList.remove("container__botao-desabilitado");
+    button.classList.add("container__botao");
+  } else {
+    button.classList.remove("container__botao");
+    button.classList.add("container__botao-desabilitado");
+  }
+}
+
+function reset() {
+  document.getElementById("quantidade").value = "";
+  document.getElementById("de").value = "";
+  document.getElementById("ate").value = "";
+  document.getElementById(
+    "result"
+  ).innerHTML = `<label class="texto__paragrafo">Números sorteados: Nenhum número sorteado.</label>`; //Aqui inserimos o resultado como um label padrão para resetá lo
+  changeButtonStatus();
 }
