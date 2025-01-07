@@ -5,6 +5,13 @@ function raffle() {
   let from = parseInt(document.getElementById("from").value);
   let until = parseInt(document.getElementById("until").value);
 
+  if (from >= until) {
+    alert(
+      `O número inicial ${from} deve ser menor que o número final ${until}!`
+    );
+    return; //Faz com que a função retorne para o input inicial dos valores.
+  }
+
   let randomNumbers = [];
   let number;
 
