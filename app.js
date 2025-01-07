@@ -12,6 +12,14 @@ function raffle() {
     return; //Faz com que a função retorne para o input inicial dos valores.
   }
 
+  if (until - from + 1 < quantity) {
+    //O +1 serve como um intervalo inclusivo
+    alert(
+      `O intervalo entre ${from} e ${until} deve ser maior ou igual à quantidade de números solicitados!`
+    );
+    return;
+  }
+
   let randomNumbers = [];
   let number;
 
