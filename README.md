@@ -5,7 +5,7 @@ Este é um projeto simples de um sorteador de números, desenvolvido utilizando 
 ## Tecnologias Utilizadas
 - **HTML**: Estrutura da página
 - **CSS**: Estilização e layout
-- **JavaScript**: Lógica de sorteio a
+- **JavaScript**: Lógica de sorteio
 
 ## Funcionalidades
 - Definir um intervalo mínimo e máximo
